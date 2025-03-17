@@ -626,14 +626,26 @@
         </div>
     </div>
     
+    <!-- Contact Me Button - Positioned at top left corner -->
+    <div class="contact-btn" id="contact-btn" style="position: fixed; top: 20px; left: 20px; background-color: var(--accent-color); color: white; padding: 10px 15px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; z-index: 1001; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+        Contact Me
+        <div id="contact-dropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 10px; background-color: var(--card-bg); border: 1px solid var(--accent-color); border-radius: 8px; padding: 15px; min-width: 230px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); z-index: 100; color: var(--text-color);">
+            <p><strong>Phone:</strong> (513)-918-9488</p>
+            <p><strong>Email:</strong> ongjs@mail.uc.edu</p>
+        </div>
+    </div>
+    
     <!-- Header Section -->
     <header>
         <div class="container">
-            <img src="JaiSheng-Photo.jpg" alt="Profile Picture" class="profile-img">
-            <h1>Jai Sheng Ong</h1>
-            <p>Computer Science Student</p>
-            <p>Cincinnati, OH 45220 | (513)-918-9488</p>
-            <p>Email: ongjs@mail.uc.edu</p>
+            <div class="header-content" style="display: flex; justify-content: center; align-items: center; position: relative;">
+                <div>
+                    <img src="JaiSheng-Photo.jpg" alt="Profile Picture" class="profile-img">
+                    <h1>Jai Sheng Ong</h1>
+                    <p>Student Class of 2028</p>
+                    <p>Available for Co-op Summer 2025</p>
+                </div>
+            </div>
         </div>
     </header>
     
@@ -654,11 +666,11 @@
         <h2>About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>Hey! I'm a CS student at University of Cincinnati with a passion for software development and emerging technologies. I'm particularly fascinated by the potential of virtual reality and game development to create immersive digital experiences.</p>
+                <p>Hey! I'm a Computer Science student at University of Cincinnati with a passion for software development and emerging technologies. I'm particularly fascinated by the potential of virtual reality and game development to create immersive digital experiences.</p>
                 
                 <div class="more-about-btn" id="more-about-btn" style="text-align: center; margin: 2rem auto; padding: 1rem; max-width: 300px; border: 2px solid var(--accent-color); border-radius: 10px; cursor: pointer; transition: all 0.3s ease;">
                     <h3 style="color: var(--accent-color);">More About Me</h3>
-                    <p style="margin-top: 0.5rem; font-weight: bold;"> Click for details </p>
+                    <p style="margin-top: 0.5rem; font-weight: bold;">Click for details</p>
                 </div>
                 
                 <div id="more-about-content" class="more-about-content" style="display: none;">
@@ -887,6 +899,11 @@
                         <div class="skill-item">
                             <img src="https://cdn-icons-png.flaticon.com/512/197/197375.png" alt="Mandarin Chinese">
                             <p>Mandarin Chinese</p>
+                            <p><small>Fluent</small></p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/197/197581.png" alt="Bahasa Melayu">
+                            <p>Bahasa Melayu</p>
                             <p><small>Fluent</small></p>
                         </div>
                     </div>
@@ -1147,11 +1164,11 @@
             if (moreAboutContent.style.display === 'none') {
                 moreAboutContent.style.display = 'block';
                 moreAboutBtn.querySelector('h3').textContent = 'Less About Me';
-                moreAboutBtn.querySelector('p').textContent = '👆 Click to collapse 👆';
+                moreAboutBtn.querySelector('p').textContent = 'Click to collapse';
             } else {
                 moreAboutContent.style.display = 'none';
                 moreAboutBtn.querySelector('h3').textContent = 'More About Me';
-                moreAboutBtn.querySelector('p').textContent = '👇 Click for details 👇';
+                moreAboutBtn.querySelector('p').textContent = 'Click for details';
             }
         });
 
@@ -1170,6 +1187,42 @@
             moreAboutBtn.querySelector('h3').style.color = 'var(--accent-color)';
             moreAboutBtn.style.transform = '';
             moreAboutBtn.style.boxShadow = '';
+        });
+        
+        // Contact Me button functionality
+        const contactBtn = document.getElementById('contact-btn');
+        const contactDropdown = document.getElementById('contact-dropdown');
+        let isContactOpen = false;
+        
+        contactBtn.addEventListener('click', () => {
+            if (!isContactOpen) {
+                contactDropdown.style.display = 'block';
+                isContactOpen = true;
+            } else {
+                contactDropdown.style.display = 'none';
+                isContactOpen = false;
+            }
+        });
+        
+        // Close contact dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (isContactOpen && !contactBtn.contains(e.target)) {
+                contactDropdown.style.display = 'none';
+                isContactOpen = false;
+            }
+        });
+        
+        // Add hover effect to Contact Me button
+        contactBtn.addEventListener('mouseenter', () => {
+            contactBtn.style.backgroundColor = 'var(--accent-hover)';
+            contactBtn.style.transform = 'translateY(-3px)';
+            contactBtn.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+        });
+        
+        contactBtn.addEventListener('mouseleave', () => {
+            contactBtn.style.backgroundColor = 'var(--accent-color)';
+            contactBtn.style.transform = '';
+            contactBtn.style.boxShadow = '';
         });
     </script>
 </body>
