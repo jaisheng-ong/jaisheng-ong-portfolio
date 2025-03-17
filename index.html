@@ -648,18 +648,32 @@
         </ul>
     </nav>
     
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Hello! I'm Jai Sheng Ong, a Computer Science student at the University of Cincinnati. I'm passionate about software development and problem-solving.</p>
-                    <p>I enjoy working on challenging projects that push me to learn new technologies and improve my skills. My goal is to create software solutions that make a positive impact.</p>
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hey! I'm a CS student at University of Cincinnati with a passion for software development and emerging technologies. I'm particularly fascinated by the potential of virtual reality and game development to create immersive digital experiences.</p>
+                
+                <div class="more-about-btn" id="more-about-btn" style="text-align: center; margin: 2rem auto; padding: 1rem; max-width: 300px; border: 2px solid var(--accent-color); border-radius: 10px; cursor: pointer; transition: all 0.3s ease;">
+                    <h3 style="color: var(--accent-color);">More About Me</h3>
+                    <p style="margin-top: 0.5rem; font-weight: bold;"> Click for details </p>
+                </div>
+                
+                <div id="more-about-content" class="more-about-content" style="display: none;">
+                    <div class="modal-body" style="margin-top: 2rem;">
+                        <h3>My Vision</h3>
+                        <p>My long-term vision involves developing innovative VR applications that bridge human consciousness with virtual worlds, creating spaces where users can explore alternate realities, abilities, and identities. This interest drives me to learn about both technical aspects of software engineering and diverse cultural contexts that can inform rich virtual environments.</p>
+                        
+                        <h3>My Approach</h3>
+                        <p>While I have specific interests in gaming and VR, I'm eager to build a strong foundation in software development through diverse experiences. I enjoy tackling challenging projects that enhance my technical skills and problem-solving abilities, and I'm open to opportunities that will help me grow as a developer.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
     
     <!-- Education Section -->
     <section id="education" style="background-color: var(--section-alt-bg);">
@@ -1123,6 +1137,39 @@
                 cstateModal.classList.remove('active');
                 document.body.style.overflow = 'auto';
             }
+        });
+
+        // More About Me toggle functionality
+        const moreAboutBtn = document.getElementById('more-about-btn');
+        const moreAboutContent = document.getElementById('more-about-content');
+
+        moreAboutBtn.addEventListener('click', () => {
+            if (moreAboutContent.style.display === 'none') {
+                moreAboutContent.style.display = 'block';
+                moreAboutBtn.querySelector('h3').textContent = 'Less About Me';
+                moreAboutBtn.querySelector('p').textContent = '👆 Click to collapse 👆';
+            } else {
+                moreAboutContent.style.display = 'none';
+                moreAboutBtn.querySelector('h3').textContent = 'More About Me';
+                moreAboutBtn.querySelector('p').textContent = '👇 Click for details 👇';
+            }
+        });
+
+        // Add hover effect to More About Me button
+        moreAboutBtn.addEventListener('mouseenter', () => {
+            moreAboutBtn.style.backgroundColor = 'var(--accent-color)';
+            moreAboutBtn.style.color = 'white';
+            moreAboutBtn.querySelector('h3').style.color = 'white';
+            moreAboutBtn.style.transform = 'translateY(-5px)';
+            moreAboutBtn.style.boxShadow = '0 5px 15px var(--shadow-color)';
+        });
+
+        moreAboutBtn.addEventListener('mouseleave', () => {
+            moreAboutBtn.style.backgroundColor = '';
+            moreAboutBtn.style.color = '';
+            moreAboutBtn.querySelector('h3').style.color = 'var(--accent-color)';
+            moreAboutBtn.style.transform = '';
+            moreAboutBtn.style.boxShadow = '';
         });
     </script>
 </body>
