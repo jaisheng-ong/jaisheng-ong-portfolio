@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jai Sheng Ong - Portfolio</title>
+    <style>
+        /* Theme Variables */
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --header-bg: #2c3e50;
+            --header-text: white;
+            --nav-bg: #34495e;
+            --card-bg: white;
+            --section-alt-bg: #ecf0f1;
+            --accent-color: #3498db;
+            --accent-hover: #2980b9;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dark Theme Variables */
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --header-bg: #1a1a1a;
+            --header-text: #f0f0f0;
+            --nav-bg: #232323;
+            --card-bg: #2a2a2a;
+            --section-alt-bg: #1e1e1e;
+            --accent-color: #4dabf7;
+            --accent-hover: #3793dd;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+        }
+        
+        .theme-toggle button {
+            background-color: transparent;
+            border: 2px solid var(--header-text);
+            color: var(--header-text);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            margin-right: 15px;
+        }
+        
+        .theme-toggle button:hover {
+            background-color: var(--header-text);
+            color: var(--header-bg);
+        }
+        
+        .header-social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .header-social-links a {
+            color: var(--header-text);
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+        
+        .header-social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--header-text);
+            transition: fill 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            fill: var(--accent-color);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--header-text);
+            margin-bottom: 1rem;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--nav-bg);
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: var(--header-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 3rem 0;
+        }
+        
+        h2 {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 1rem;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .skill-bubble {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-bubble:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px var(--shadow-color);
+        }
+        
+        .skill-bubble img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-bubble h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-bubble p {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: var(--section-alt-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-item img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        /* Projects Section */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        
+        .project-description {
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+        
+        .project-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .project-link:hover {
+            background-color: var(--accent-hover);
+        }
+        
+        .project-tech-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: flex-start;
+        }
+        
+        .tech-icon-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .project-tech-icon {
+            width: 25px;
+            height: 25px;
+            object-fit: contain;
+        }
+        
+        .tech-tooltip {
+            visibility: hidden;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            text-align: center;
+            border-radius: 4px;
+            padding: 5px 8px;
+            margin-bottom: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            box-shadow: 0 2px 5px var(--shadow-color);
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 1;
+            border: 1px solid var(--accent-color);
+        }
+        
+        .tech-icon-wrapper:hover .tech-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .submit-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--accent-hover);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .social-links a {
+            color: var(--header-text);
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--header-text);
+            transition: fill 0.3s ease;
+        }
+        
+        .footer-icon:hover {
+            fill: var(--accent-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+            }
+        }
+        
+        /* Education Section */
+        .education-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .education-bubble {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .education-bubble:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px var(--shadow-color);
+        }
+        
+        .education-bubble img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+        
+        .education-bubble h3 {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-bubble p {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .modal-content {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            width: 80%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            border-radius: 8px;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            color: var(--accent-color);
+        }
+        
+        .modal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--accent-color);
+        }
+        
+        .modal-header img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-right: 1.5rem;
+        }
+        
+        .modal-body {
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-body h3 {
+            margin: 1.5rem 0 0.5rem;
+            color: var(--accent-color);
+        }
+        
+        .courses-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .course-item {
+            background-color: var(--section-alt-bg);
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="theme-toggle-btn">🌞 Light Mode</button>
+        <div class="header-social-links">
+            <a href="https://linkedin.com/in/jaisheng-ong" target="_blank">
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+            </a>
+            <a href="https://github.com/jaisheng-ong" target="_blank">
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <img src="JaiSheng-Photo.jpg" alt="Profile Picture" class="profile-img">
+            <h1>Jai Sheng Ong</h1>
+            <p>Computer Science Student | Software Developer</p>
+            <p>Cincinnati, OH 45220 | (513)-918-9488</p>
+            <p>Email: ongjs@mail.uc.edu</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+    
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Jai Sheng Ong, a Computer Science student at the University of Cincinnati. I'm passionate about software development and problem-solving.</p>
+                    <p>I enjoy working on challenging projects that push me to learn new technologies and improve my skills. My goal is to create software solutions that make a positive impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education" style="background-color: var(--section-alt-bg);">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-container">
+                <div class="education-bubble" id="uc-bubble">
+                    <img src="uc-logo.png" alt="University of Cincinnati Logo">
+                    <h3>University of Cincinnati</h3>
+                    <p>BS in Computer Science</p>
+                    <p>Click for details</p>
+                </div>
+                <div class="education-bubble" id="cstate-bubble">
+                    <img src="https://www.cincinnatistate.edu/favicon.ico" alt="Cincinnati State Logo">
+                    <h3>Cincinnati State</h3>
+                    <p>AAS in Software Engineering</p>
+                    <p>Click for details</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- University of Cincinnati Modal -->
+        <div class="modal" id="uc-modal">
+            <div class="modal-content">
+                <span class="modal-close" id="uc-modal-close">&times;</span>
+                <div class="modal-header">
+                    <img src="uc-logo.png" alt="University of Cincinnati Logo">
+                    <div>
+                        <h2>University of Cincinnati</h2>
+                        <p>Bachelor of Science in Computer Science</p>
+                        <p>Expected Graduation: January 2028</p>
+                        <p>GPA: 3.4</p>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <h3>About My Experience</h3>
+                    <p>As a Computer Science student at the University of Cincinnati, I'm focusing on developing strong foundations in programming, algorithms, and software development. I'm particularly interested in exploring software engineering and artificial intelligence.</p>
+                    
+                    <h3>Relevant Coursework</h3>
+                    <div class="courses-list">
+                        <div class="course-item">Data Structures</div>
+                        <div class="course-item">Intro to Computing Systems</div>
+                        <div class="course-item">Object-Oriented Programming</div>
+                    </div>
+                    
+                    <h3>Achievements</h3>
+                    <p>Dean's List.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cincinnati State Modal -->
+        <div class="modal" id="cstate-modal">
+            <div class="modal-content">
+                <span class="modal-close" id="cstate-modal-close">&times;</span>
+                <div class="modal-header">
+                    <img src="https://www.cincinnatistate.edu/favicon.ico" alt="Cincinnati State Logo">
+                    <div>
+                        <h2>Cincinnati State Technical and Community College</h2>
+                        <p>Associate of Applied Science in Software Engineering Technology</p>
+                        <p>Graduated: Spring 2024</p>
+                        <p>GPA: 4.0</p>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <h3>About My Experience</h3>
+                    <p>At Cincinnati State, I gained foundational knowledge in software development through project-based learning. The program provided me with practical skills in programming, database management, and software development methodologies.</p>
+                    
+                    <h3>Relevant Coursework</h3>
+                    <div class="courses-list">
+                        <div class="course-item">System Analysis & Design</div>
+                        <div class="course-item">Programming 1 & 2</div>
+                        <div class="course-item">Object-Oriented Programming</div>
+                        <div class="course-item">Database Design</div>
+                    </div>
+                    
+                    <h3>Achievements</h3>
+                    <p>Graduated with highest honors (4.0 GPA)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-container">
+                <div class="skill-bubble" id="programming-bubble">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="Programming Languages">
+                    <h3>Programming Languages</h3>
+                    <p>Click for details</p>
+                </div>
+                <div class="skill-bubble" id="tech-bubble">
+                    <img src="technology-logo.png" alt="Technologies">
+                    <h3>Technologies</h3>
+                    <p>Click for details</p>
+                </div>
+                <div class="skill-bubble" id="language-bubble">
+                    <img src="https://cdn-icons-png.flaticon.com/512/484/484633.png" alt="Languages">
+                    <h3>Languages</h3>
+                    <p>Click for details</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Programming Languages Modal -->
+        <div class="modal" id="programming-modal">
+            <div class="modal-content">
+                <span class="modal-close" id="programming-modal-close">&times;</span>
+                <div class="modal-header">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="Programming Languages">
+                    <div>
+                        <h2>Programming Languages</h2>
+                        <p>My Technical Programming Skills</p>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p>These are the programming languages I've worked with and have experience using in various projects:</p>
+                    
+                    <div class="skill-grid">
+                        <div class="skill-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python">
+                            <p>Python</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C++">
+                            <p>C++</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png" alt="HTML">
+                            <p>HTML</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="vb-logo.png" alt="Visual Basic">
+                            <p>Visual Basic</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968313.png" alt="MySQL">
+                            <p>MySQL</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="labview-logo.png" alt="NI LabVIEW">
+                            <p>NI LabVIEW</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="matlab-logo.png" alt="MATLAB">
+                            <p>MATLAB</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Technologies Modal -->
+        <div class="modal" id="tech-modal">
+            <div class="modal-content">
+                <span class="modal-close" id="tech-modal-close">&times;</span>
+                <div class="modal-header">
+                    <img src="technology-logo.png" alt="Technologies">
+                    <div>
+                        <h2>Technologies</h2>
+                        <p>Tools and Frameworks I Use</p>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p>These are the technologies, tools, and platforms I'm proficient with:</p>
+                    
+                    <div class="skill-grid">
+                        <div class="skill-item">
+                            <img src="https://cursor.sh/favicon.ico" alt="Cursor">
+                            <p>Cursor</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+                            <p>GitHub</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968389.png" alt="Visual Studio">
+                            <p>Visual Studio</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="oop-logo.png" alt="OOP">
+                            <p>Object-Oriented Programming</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Languages Modal -->
+        <div class="modal" id="language-modal">
+            <div class="modal-content">
+                <span class="modal-close" id="language-modal-close">&times;</span>
+                <div class="modal-header">
+                    <img src="https://cdn-icons-png.flaticon.com/512/484/484633.png" alt="Languages">
+                    <div>
+                        <h2>Languages</h2>
+                        <p>Languages I Speak</p>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p>I can communicate fluently in these languages:</p>
+                    
+                    <div class="skill-grid">
+                        <div class="skill-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/323/323310.png" alt="English">
+                            <p>English</p>
+                            <p><small>Fluent</small></p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/197/197375.png" alt="Mandarin Chinese">
+                            <p>Mandarin Chinese</p>
+                            <p><small>Fluent</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Work Experience Section -->
+    <section id="experience" style="background-color: var(--section-alt-bg);">
+        <div class="container">
+            <h2>Work Experience</h2>
+            <div class="experience-container">
+                <div class="experience-item">
+                    <h3>Customer Service / Waiting Staff</h3>
+                    <p><strong>Sushi Tei, Kuala Lumpur, Malaysia</strong></p>
+                    <p><strong>December 2020 - May 2021</strong></p>
+                    <ul>
+                        <li>Provided customer service in a Japanese restaurant to meet customer needs</li>
+                        <li>Processed orders and ensured timely delivery of sushi and other dishes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-title">Sleep-Sack Duo</h3>
+                        <p class="project-description">• Led a team of 4 in prototyping to address homelessness, focusing on reducing infant mortality among homeless families in San Jose.</p>
+                        <p class="project-description">• Engineered an insulated jacket with a sleeping bag extension and baby holder, meeting warmth retention (10°F), water resistance (5 minutes), and durability (10 pounds capacity) requirements.</p>
+                        <p><strong>August 2024 – December 2024</strong></p>
+                        <div class="project-tech-icons">
+                            <div class="tech-icon-wrapper">
+                                <img class="project-tech-icon" src="https://cdn-icons-png.flaticon.com/512/2721/2721264.png" alt="Engineering">
+                                <span class="tech-tooltip">Engineering</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-title">Ski and Snowboard Rental System</h3>
+                        <p class="project-description">• Developed a Ski and Snowboard Rental System using Python and Object-Oriented Programming.</p>
+                        <p class="project-description">• Implemented features for customers to view available equipment, rent skis and snowboards on an hourly, daily, or weekly basis, and apply discounts for family rentals and coupon codes.</p>
+                        <p><strong>May 2023 – August 2023</strong></p>
+                        <div class="project-tech-icons">
+                            <div class="tech-icon-wrapper">
+                                <img class="project-tech-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python">
+                                <span class="tech-tooltip">Python</span>
+                            </div>
+                            <div class="tech-icon-wrapper">
+                                <img class="project-tech-icon" src="oop-logo.png" alt="OOP">
+                                <span class="tech-tooltip">OOP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-title">Employee Discount Calculation System</h3>
+                        <p class="project-description">• Utilized Python program to calculate employee discount based on years of service, employee status and annual discount limits.</p>
+                        <p class="project-description">• Designed application to handle multiple employees in a single session, display individual and summary reports.</p>
+                        <p><strong>Jan 2023 - May 2023</strong></p>
+                        <div class="project-tech-icons">
+                            <div class="tech-icon-wrapper">
+                                <img class="project-tech-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python">
+                                <span class="tech-tooltip">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-title">Passenger and Employee Management System</h3>
+                        <p class="project-description">• Developed a comprehensive login system using Visual Basic and SQL for both passengers and employees.</p>
+                        <p class="project-description">• Implemented secure login functionality with validation for Passenger and Employee roles.</p>
+                        <p><strong>August 2022 - Dec 2022</strong></p>
+                        <div class="project-tech-icons">
+                            <div class="tech-icon-wrapper">
+                                <img class="project-tech-icon" src="vb-logo.png" alt="Visual Basic">
+                                <span class="tech-tooltip">Visual Basic</span>
+                            </div>
+                            <div class="tech-icon-wrapper">
+                                <img class="project-tech-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968313.png" alt="MySQL">
+                                <span class="tech-tooltip">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Jai Sheng Ong. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/jaisheng-ong" target="_blank">
+                    <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/jaisheng-ong" target="_blank">
+                    <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Theme Toggle and Modals -->
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const htmlElement = document.documentElement;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', savedTheme);
+        updateButtonText(savedTheme);
+        
+        // Toggle theme on button click
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateButtonText(newTheme);
+        });
+        
+        // Update button text based on theme
+        function updateButtonText(theme) {
+            if (theme === 'light') {
+                themeToggleBtn.textContent = '🌙 Dark Mode';
+            } else {
+                themeToggleBtn.textContent = '🌞 Light Mode';
+            }
+        }
+        
+        // Modal functionality
+        const ucBubble = document.getElementById('uc-bubble');
+        const cstateBubble = document.getElementById('cstate-bubble');
+        const ucModal = document.getElementById('uc-modal');
+        const cstateModal = document.getElementById('cstate-modal');
+        const ucModalClose = document.getElementById('uc-modal-close');
+        const cstateModalClose = document.getElementById('cstate-modal-close');
+        
+        ucBubble.addEventListener('click', () => {
+            ucModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        cstateBubble.addEventListener('click', () => {
+            cstateModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        ucModalClose.addEventListener('click', () => {
+            ucModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        cstateModalClose.addEventListener('click', () => {
+            cstateModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal if clicked outside content
+        window.addEventListener('click', (e) => {
+            if (e.target === ucModal) {
+                ucModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            if (e.target === cstateModal) {
+                cstateModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Skills Modal functionality
+        const programmingBubble = document.getElementById('programming-bubble');
+        const techBubble = document.getElementById('tech-bubble');
+        const languageBubble = document.getElementById('language-bubble');
+        const programmingModal = document.getElementById('programming-modal');
+        const techModal = document.getElementById('tech-modal');
+        const languageModal = document.getElementById('language-modal');
+        const programmingModalClose = document.getElementById('programming-modal-close');
+        const techModalClose = document.getElementById('tech-modal-close');
+        const languageModalClose = document.getElementById('language-modal-close');
+        
+        programmingBubble.addEventListener('click', () => {
+            programmingModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        techBubble.addEventListener('click', () => {
+            techModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        languageBubble.addEventListener('click', () => {
+            languageModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        programmingModalClose.addEventListener('click', () => {
+            programmingModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        techModalClose.addEventListener('click', () => {
+            techModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        languageModalClose.addEventListener('click', () => {
+            languageModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close skills modals if clicked outside content
+        window.addEventListener('click', (e) => {
+            if (e.target === programmingModal) {
+                programmingModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            if (e.target === techModal) {
+                techModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            if (e.target === languageModal) {
+                languageModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            if (e.target === ucModal) {
+                ucModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            if (e.target === cstateModal) {
+                cstateModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
