@@ -40,72 +40,48 @@
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
             transition: all 0.3s ease;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 300px;
+            background-color: #F5F5F5;
+            padding: 2rem;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        
+        .main-content {
+            flex: 1;
+            margin-left: 300px;
+            background-color: #f5f5f5;
+            padding: 2rem;
         }
         
         .container {
-            width: 80%;
+            width: 100%;
             margin: 0 auto;
-            padding: 2rem 0;
+            padding: 0;
         }
         
-        /* Theme Toggle */
-        .theme-toggle {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-        }
-        
-        .theme-toggle button {
-            background-color: transparent;
-            border: 2px solid var(--header-text);
-            color: var(--header-text);
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            margin-right: 15px;
-        }
-        
-        .theme-toggle button:hover {
-            background-color: var(--header-text);
-            color: var(--header-bg);
-        }
-        
-        .header-social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .header-social-links a {
-            color: var(--header-text);
-            font-size: 24px;
-            transition: color 0.3s ease;
-        }
-        
-        .header-social-links a:hover {
-            color: var(--accent-color);
-        }
-        
-        .social-icon {
-            width: 24px;
-            height: 24px;
-            fill: var(--header-text);
-            transition: fill 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            fill: var(--accent-color);
-        }
         
         /* Header Styles */
         header {
@@ -123,6 +99,88 @@
             object-fit: cover;
             border: 5px solid var(--header-text);
             margin-bottom: 1rem;
+        }
+        
+        .sidebar-profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 0;
+            object-fit: cover;
+            border: none;
+            margin: 0 auto 1rem;
+            display: block;
+        }
+        
+        .sidebar-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2C2C2C;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 1rem;
+        }
+        
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            color: #2C2C2C;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background-color: #4A90E2;
+            color: white;
+        }
+        
+        .sidebar-nav a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .sidebar-social {
+            margin-top: 2rem;
+        }
+        
+        .sidebar-social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .sidebar-social-links a {
+            color: #2C2C2C;
+            font-size: 20px;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .sidebar-social-links a:hover {
+            color: #4A90E2;
+        }
+        
+        .sidebar-social-links .social-icon {
+            fill: #2C2C2C;
+            transition: fill 0.3s ease;
+        }
+        
+        .sidebar-social-links a:hover .social-icon {
+            fill: #4A90E2;
         }
         
         /* Navigation */
@@ -270,6 +328,65 @@
             margin: 0;
         }
         
+        /* Work Experience Section */
+        .experience-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .experience-item {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .experience-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .experience-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .experience-header h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-color);
+            font-size: 1.5rem;
+        }
+        
+        .experience-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .company {
+            font-weight: 600;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            color: var(--text-color);
+            opacity: 0.8;
+            font-size: 1rem;
+        }
+        
+        .experience-content ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        
+        .experience-content li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+        
         /* Projects Section */
         .projects-container {
             display: grid;
@@ -364,54 +481,50 @@
         }
         
         /* Contact Section */
-        .contact-form {
-            max-width: 600px;
+        .contact-bar {
+            display: flex;
+            max-width: 800px;
             margin: 0 auto;
-            background-color: var(--card-bg);
-            padding: 2rem;
             border-radius: 8px;
+            overflow: hidden;
             box-shadow: 0 4px 6px var(--shadow-color);
         }
         
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-color);
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: inherit;
-            background-color: var(--card-bg);
-            color: var(--text-color);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-        
-        .submit-btn {
-            background-color: var(--accent-color);
+        .contact-segment {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
             color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s;
+            text-align: center;
         }
         
-        .submit-btn:hover {
-            background-color: var(--accent-hover);
+        .email-segment {
+            background-color: #2C2C2C;
+        }
+        
+        .location-segment {
+            background-color: #4A7C9B;
+        }
+        
+        .phone-segment {
+            background-color: #2C2C2C;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-text {
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 0;
         }
         
         /* Footer */
@@ -609,56 +722,38 @@
     </style>
 </head>
 <body>
-    <!-- Theme Toggle -->
-    <div class="theme-toggle">
-        <button id="theme-toggle-btn">🌞 Light Mode</button>
-        <div class="header-social-links">
-            <a href="https://linkedin.com/in/jaisheng-ong" target="_blank">
-                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-            </a>
-            <a href="https://github.com/jaisheng-ong" target="_blank">
-                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-            </a>
-        </div>
-    </div>
     
-    <!-- Contact Me Button - Positioned at top left corner -->
-    <div class="contact-btn" id="contact-btn" style="position: fixed; top: 20px; left: 20px; background-color: var(--accent-color); color: white; padding: 10px 15px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; z-index: 1001; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
-        Contact Me
-        <div id="contact-dropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 10px; background-color: var(--card-bg); border: 1px solid var(--accent-color); border-radius: 8px; padding: 15px; min-width: 230px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); z-index: 100; color: var(--text-color);">
-            <p><strong>Phone:</strong> (513)-918-9488</p>
-            <p><strong>Email:</strong> ongjs@mail.uc.edu</p>
-        </div>
-    </div>
     
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <div class="header-content" style="display: flex; justify-content: center; align-items: center; position: relative;">
-                <div>
-                    <img src="JaiSheng-Photo.jpg" alt="Profile Picture" class="profile-img">
-                    <h1>Jai Sheng Ong</h1>
-                    <p>Student Class of 2028</p>
-                    <p>Available for Co-op Spring 2026</p>
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src="JaiSheng-Photo.jpg" alt="Profile Picture" class="sidebar-profile-img">
+            <div class="sidebar-name">Jai Sheng Ong</div>
+            
+            <ul class="sidebar-nav">
+                <li><a href="#about" class="active"><i>👤</i> ABOUT</a></li>
+                <li><a href="#contact"><i>✉</i> CONTACT</a></li>
+            </ul>
+            
+            <div class="sidebar-social">
+                <div class="sidebar-social-links">
+                    <a href="https://github.com/jaisheng-ong" target="_blank">
+                        <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/jaisheng-ong" target="_blank">
+                        <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
-    </header>
-    
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-        </ul>
-    </nav>
+        
+        <!-- Main Content -->
+        <div class="main-content">
     
 <!-- About Section -->
 <section id="about">
@@ -666,8 +761,8 @@
         <h2>About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p style="text-align: center;">Hey! I'm a Computer Science student at University of Cincinnati with a passion for software development and emerging technologies!</p>
-                <p style="text-align: center;">I'm particularly fascinated by the potential of virtual reality and game development to create immersive digital experience!</p>
+                <p style="text-align: center;">Hey! I'm a Computer Science student at University of Cincinnati with a passion for software development and emerging technologies.</p>
+                <p style="text-align: center;">I'm particularly fascinated by the potential of virtual reality and game development to create immersive digital experiences.</p>
                 
                 <div class="more-about-btn" id="more-about-btn" style="text-align: center; margin: 2rem auto; padding: 1rem; max-width: 300px; border: 2px solid var(--accent-color); border-radius: 10px; cursor: pointer; transition: all 0.3s ease;">
                     <h3 style="color: var(--accent-color);">More About Me</h3>
@@ -677,13 +772,10 @@
                 <div id="more-about-content" class="more-about-content" style="display: none;">
                     <div class="modal-body" style="margin-top: 2rem;">
                         <h3 style="text-align: center;">My Vision</h3>
-                        <p style="text-align: center;">My long-term vision involves developing innovative VR applications that bridge human consciousness with virtual worlds, creating spaces where users can explore alternate realities, abilities, and identities!</p>
-                        <p style="text-align: center;">This interest drives me to learn about both technical aspects of software engineering and diverse cultural contexts that can inform rich virtual environments!</p>
-                        
+                        <p style="text-align: center;">My long-term vision involves developing innovative VR applications that bridge human consciousness with virtual worlds, creating spaces where users can explore alternate realities, abilities, and identities. This interest drives me to learn about both technical aspects of software engineering and diverse cultural contexts that can inform rich virtual environments.</p>
                         
                         <h3 style="text-align: center;">My Approach</h3>
-                        <p style="text-align: center;">While I have specific interests in gaming and VR, I'm eager to build a strong foundation in software development through diverse experiences!</p> 
-                        <p style="text-align: center;">I enjoy tackling challenging projects that enhance my technical skills and problem-solving abilities, and I'm open to opportunities that will help me grow as a developer!</p>
+                        <p style="text-align: center;">While I have specific interests in gaming and VR, I'm eager to build a strong foundation in software development through diverse experiences. I enjoy tackling challenging projects that enhance my technical skills and problem-solving abilities, and I'm open to opportunities that will help me grow as a developer.</p>
                     </div>
                 </div>
             </div>
@@ -839,6 +931,10 @@
                             <img src="matlab-logo.png" alt="MATLAB">
                             <p>MATLAB</p>
                         </div>
+                        <div class="skill-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png" alt="Assembly">
+                            <p>Assembly</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -860,8 +956,8 @@
                     
                     <div class="skill-grid">
                         <div class="skill-item">
-                            <img src="https://cursor.sh/favicon.ico" alt="Cursor">
-                            <p>Cursor</p>
+                            <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git">
+                            <p>Git</p>
                         </div>
                         <div class="skill-item">
                             <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
@@ -870,6 +966,10 @@
                         <div class="skill-item">
                             <img src="https://cdn-icons-png.flaticon.com/512/5968/5968389.png" alt="Visual Studio">
                             <p>Visual Studio</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968313.png" alt="MySQL">
+                            <p>MySQL</p>
                         </div>
                         <div class="skill-item">
                             <img src="oop-logo.png" alt="OOP">
@@ -898,17 +998,14 @@
                         <div class="skill-item">
                             <img src="https://cdn-icons-png.flaticon.com/512/323/323310.png" alt="English">
                             <p>English</p>
-                            <p><small>Fluent</small></p>
                         </div>
                         <div class="skill-item">
                             <img src="https://cdn-icons-png.flaticon.com/512/197/197375.png" alt="Mandarin Chinese">
                             <p>Mandarin Chinese</p>
-                            <p><small>Fluent</small></p>
                         </div>
                         <div class="skill-item">
                             <img src="https://cdn-icons-png.flaticon.com/512/197/197581.png" alt="Bahasa Melayu">
                             <p>Bahasa Melayu</p>
-                            <p><small>Fluent</small></p>
                         </div>
                     </div>
                 </div>
@@ -922,13 +1019,34 @@
             <h2>Work Experience</h2>
             <div class="experience-container">
                 <div class="experience-item">
-                    <h3>Customer Service / Waiting Staff</h3>
-                    <p><strong>Sushi Tei, Kuala Lumpur, Malaysia</strong></p>
-                    <p><strong>December 2020 - May 2021</strong></p>
-                    <ul>
-                        <li>Provided customer service in a Japanese restaurant to meet customer needs</li>
-                        <li>Processed orders and ensured timely delivery of sushi and other dishes</li>
-                    </ul>
+                    <div class="experience-header">
+                        <h3>Software Engineer Intern</h3>
+                        <div class="experience-meta">
+                            <span class="company">Aubot, Remote</span>
+                            <span class="date">May 2025 – Aug 2025</span>
+                        </div>
+                    </div>
+                    <div class="experience-content">
+                        <ul>
+                            <li><strong>Improved lesson publishing speed by 30%</strong> (2–3 days faster) by reviewing and correcting <strong>120+ grammar, clarity, and technical errors</strong> across <strong>10+ advanced Python documents</strong> prior to release.</li>
+                            <li><strong>Enhanced lesson maintainability and student learning outcomes</strong> by leveraging <strong>Git-based collaboration</strong>, contributing fixes, and writing <strong>automated test scripts</strong> that flagged incorrect solution methods.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Customer Service / Waiting Staff</h3>
+                        <div class="experience-meta">
+                            <span class="company">Sushi Tei, Kuala Lumpur, Malaysia</span>
+                            <span class="date">December 2020 - May 2021</span>
+                        </div>
+                    </div>
+                    <div class="experience-content">
+                        <ul>
+                            <li>Provided customer service in a Japanese restaurant to meet customer needs</li>
+                            <li>Processed orders and ensured timely delivery of sushi and other dishes</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1007,6 +1125,27 @@
         </div>
     </section>
     
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-bar">
+                <div class="contact-segment email-segment">
+                    <div class="contact-icon">✉</div>
+                    <div class="contact-text">ongjs@mail.uc.edu</div>
+                </div>
+                <div class="contact-segment location-segment">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-text">Cincinnati, OH</div>
+                </div>
+                <div class="contact-segment phone-segment">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-text">(513)-918-9488</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1025,35 +1164,59 @@
             </div>
         </div>
     </footer>
+        </div> <!-- Close main-content -->
+    </div> <!-- Close main-layout -->
 
-    <!-- JavaScript for Theme Toggle and Modals -->
+    <!-- JavaScript for Modals -->
     <script>
-        const themeToggleBtn = document.getElementById('theme-toggle-btn');
-        const htmlElement = document.documentElement;
         
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        htmlElement.setAttribute('data-theme', savedTheme);
-        updateButtonText(savedTheme);
-        
-        // Toggle theme on button click
-        themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        // Smooth scrolling navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutLink = document.querySelector('a[href="#about"]');
+            const contactLink = document.querySelector('a[href="#contact"]');
             
-            htmlElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateButtonText(newTheme);
-        });
-        
-        // Update button text based on theme
-        function updateButtonText(theme) {
-            if (theme === 'light') {
-                themeToggleBtn.textContent = '🌙 Dark Mode';
-            } else {
-                themeToggleBtn.textContent = '🌞 Light Mode';
+            // Handle ABOUT link click
+            if (aboutLink) {
+                aboutLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const aboutSection = document.getElementById('about');
+                    if (aboutSection) {
+                        aboutSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Update active states
+                        updateActiveNav(this);
+                    }
+                });
             }
-        }
+            
+            // Handle CONTACT link click
+            if (contactLink) {
+                contactLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                        contactSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Update active states
+                        updateActiveNav(this);
+                    }
+                });
+            }
+            
+            // Function to update active navigation states
+            function updateActiveNav(activeLink) {
+                // Remove active class from all nav links
+                const allNavLinks = document.querySelectorAll('.sidebar-nav a');
+                allNavLinks.forEach(link => link.classList.remove('active'));
+                
+                // Add active class to clicked link
+                activeLink.classList.add('active');
+            }
+        });
         
         // Modal functionality
         const ucBubble = document.getElementById('uc-bubble');
@@ -1193,42 +1356,6 @@
             moreAboutBtn.style.boxShadow = '';
         });
         
-        // Contact Me button functionality
-        const contactBtn = document.getElementById('contact-btn');
-        const contactDropdown = document.getElementById('contact-dropdown');
-        let isContactOpen = false;
-        
-        contactBtn.addEventListener('click', () => {
-            if (!isContactOpen) {
-                contactDropdown.style.display = 'block';
-                isContactOpen = true;
-            } else {
-                contactDropdown.style.display = 'none';
-                isContactOpen = false;
-            }
-        });
-        
-        // Close contact dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (isContactOpen && !contactBtn.contains(e.target)) {
-                contactDropdown.style.display = 'none';
-                isContactOpen = false;
-            }
-        });
-        
-        // Add hover effect to Contact Me button
-        contactBtn.addEventListener('mouseenter', () => {
-            contactBtn.style.backgroundColor = 'var(--accent-hover)';
-            contactBtn.style.transform = 'translateY(-3px)';
-            contactBtn.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
-        });
-        
-        contactBtn.addEventListener('mouseleave', () => {
-            contactBtn.style.backgroundColor = 'var(--accent-color)';
-            contactBtn.style.transform = '';
-            contactBtn.style.boxShadow = '';
-        });
     </script>
 </body>
 </html>
-
