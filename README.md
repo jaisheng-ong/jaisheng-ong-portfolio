@@ -4,6 +4,13 @@ A personal portfolio website showcasing my education, work experience, projects,
 
 **Live Site:** [jaisheng-ong.github.io/jaisheng-ong-portfolio](https://jaisheng-ong.github.io/jaisheng-ong-portfolio/)
 
+## Author
+
+**Jai Sheng Ong**
+- LinkedIn: [linkedin.com/in/jaisheng-ong](https://linkedin.com/in/jaisheng-ong)
+- GitHub: [github.com/jaisheng-ong](https://github.com/jaisheng-ong)
+- Email: ongjs@mail.uc.edu
+
 ---
 
 ## Sections
@@ -63,10 +70,3 @@ OJS_Portfolio/
 ```
 
 ---
-
-## Author
-
-**Jai Sheng Ong**
-- LinkedIn: [linkedin.com/in/jaisheng-ong](https://linkedin.com/in/jaisheng-ong)
-- GitHub: [github.com/jaisheng-ong](https://github.com/jaisheng-ong)
-- Email: ongjs@mail.uc.edu
