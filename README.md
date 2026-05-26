@@ -6,7 +6,10 @@ A personal portfolio website showcasing my education, work experience, projects,
 
 ## Author
 
-**Jai Sheng Ong**
+**Ong Jai Sheng**
+
+![Jai's headshot](assets/jai_headshot.png)
+
 - LinkedIn: [linkedin.com/in/jaisheng-ong](https://linkedin.com/in/jaisheng-ong)
 - GitHub: [github.com/jaisheng-ong](https://github.com/jaisheng-ong)
 - Email: ongjs@mail.uc.edu
@@ -53,19 +56,19 @@ open index.html
 
 ```
 OJS_Portfolio/
-├── index.html               # Entire portfolio (HTML + CSS + JS)
+├── index.html               # Entire portfolio
 ├── README.md
-└── assets/
-    ├── JaiSheng-Photo.jpg   # Profile photo
-    ├── uc-logo.png          # University of Cincinnati logo
-    ├── assembly-logo.jpg    # ASM language icon
-    ├── labview-logo.png     # NI LabVIEW icon
-    ├── matlab-logo.png      # MATLAB icon
-    ├── vb-logo.png          # Visual Basic icon
-    ├── pycaret-logo.png     # PyCaret icon
-    ├── optuna-logo.png      # Optuna icon
-    ├── technology-logo.png  # Technologies bubble icon
-    ├── oop-logo.png         # OOP icon
+└── assets/                  # personal photo & logos
+    ├── JaiSheng-Photo.jpg   
+    ├── uc-logo.png          
+    ├── assembly-logo.jpg    
+    ├── labview-logo.png     
+    ├── matlab-logo.png      
+    ├── vb-logo.png          
+    ├── pycaret-logo.png     
+    ├── optuna-logo.png      
+    ├── technology-logo.png  
+    ├── oop-logo.png         
     └── Ong_JaiSheng_Resume2026.pdf # My Latest Resume
 ```
 
