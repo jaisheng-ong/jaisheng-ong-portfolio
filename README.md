@@ -61,14 +61,7 @@ OJS_Portfolio/
 └── assets/                  # personal photo & logos
     ├── JaiSheng-Photo.jpg   
     ├── uc-logo.png          
-    ├── assembly-logo.jpg    
-    ├── labview-logo.png     
-    ├── matlab-logo.png      
-    ├── vb-logo.png          
-    ├── pycaret-logo.png     
-    ├── optuna-logo.png      
-    ├── technology-logo.png  
-    ├── oop-logo.png         
+    ├── ...    
     └── Ong_JaiSheng_Resume2026.pdf # My Latest Resume
 ```
 
