@@ -708,6 +708,13 @@
             margin: 1.5rem 0 0.5rem;
             color: var(--accent-color);
         }
+
+        .modal-degree {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.4rem;
+        }
         
         .courses-list {
             display: grid;
@@ -721,6 +728,268 @@
             padding: 0.75rem;
             border-radius: 4px;
             font-size: 0.9rem;
+        }
+
+        /* Degree Progress Bar */
+        .degree-progress {
+            margin-top: 1rem;
+        }
+
+        .progress-dates {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-color);
+            opacity: 0.75;
+            margin-bottom: 0.4rem;
+        }
+
+        .progress-bar-track {
+            width: 100%;
+            height: 10px;
+            background-color: var(--section-alt-bg);
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 6px;
+            width: 0%;
+            transition: width 1.2s ease;
+        }
+
+        .progress-bar-fill.in-progress {
+            background-color: #e67e22;
+        }
+
+        .progress-bar-fill.completed {
+            background-color: #27ae60;
+        }
+
+        .progress-percentage {
+            text-align: right;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-top: 0.35rem;
+        }
+
+        .progress-percentage.in-progress {
+            color: #e67e22;
+        }
+
+        .progress-percentage.completed {
+            color: #27ae60;
+        }
+
+        /* Timeline Section */
+        .timeline-wrapper {
+            position: relative;
+            max-width: 900px;
+            margin: 2rem auto 0;
+            padding-bottom: 1rem;
+        }
+
+        .timeline-wrapper::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--accent-color);
+            transform: translateX(-50%);
+            opacity: 0.4;
+        }
+
+        .timeline-entry {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: calc(50% + 28px);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-entry.timeline-right {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: calc(50% + 28px);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            transform: translateX(-50%);
+            border: 3px solid var(--bg-color);
+            box-shadow: 0 0 0 2px var(--accent-color);
+            z-index: 1;
+        }
+
+        .timeline-dot.dot-future {
+            background-color: var(--bg-color);
+        }
+
+        .timeline-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 2px 8px var(--shadow-color);
+            max-width: 320px;
+            width: 100%;
+        }
+
+        .timeline-card.card-future {
+            opacity: 0.6;
+            border: 1px dashed var(--accent-color);
+            box-shadow: none;
+            background-color: transparent;
+        }
+
+        .timeline-card.card-coop {
+            border: 1.5px solid #27ae60;
+            background-color: var(--card-bg);
+        }
+
+        .timeline-card.card-coop .timeline-date {
+            color: #27ae60;
+        }
+
+        .timeline-dot.dot-coop {
+            background-color: #27ae60;
+            box-shadow: 0 0 0 2px #27ae60;
+        }
+
+        .coop-badge {
+            display: inline-block;
+            background-color: #27ae60;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.15rem 0.55rem;
+            border-radius: 10px;
+            letter-spacing: 0.5px;
+            margin-top: 0.4rem;
+            text-transform: uppercase;
+        }
+
+        .season-fall {
+            font-weight: 700;
+            color: #d35400;
+        }
+
+        .season-summer {
+            font-weight: 700;
+            color: #d4a017;
+        }
+
+        .timeline-date {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-color);
+            margin-bottom: 0.2rem;
+        }
+
+        .timeline-org {
+            font-size: 0.85rem;
+            color: var(--text-color);
+            opacity: 0.7;
+        }
+
+        .timeline-now {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            margin: 0.5rem 0 2rem;
+        }
+
+        .timeline-now-badge {
+            background-color: #e74c3c;
+            color: white;
+            padding: 0.35rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 2;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(231, 76, 60, 0.35);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-wrapper::before {
+                left: 20px;
+                transform: none;
+            }
+
+            .timeline-entry,
+            .timeline-entry.timeline-right {
+                justify-content: flex-start;
+                padding-right: 0;
+                padding-left: 52px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+                transform: translateX(-50%);
+            }
+
+            .timeline-card {
+                max-width: 100%;
+            }
+
+            .timeline-now {
+                justify-content: flex-start;
+                padding-left: 52px;
+            }
+        }
+
+        /* Currently Snapshot */
+        .currently-list {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .currently-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            background-color: var(--section-alt-bg);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .currently-label {
+            font-weight: 700;
+            color: var(--accent-color);
+            min-width: 110px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding-top: 0.1rem;
+        }
+
+        .currently-text {
+            color: var(--text-color);
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -764,21 +1033,28 @@
         <h2>About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p style="text-align: center;">Hey! I'm a Computer Science student at University of Cincinnati with a passion for software development and emerging technologies.</p>
-                <p style="text-align: center;">I'm particularly fascinated by the potential of virtual reality and game development to create immersive digital experiences.</p>
+                <p style="text-align: center;">Hey! I'm a Computer Science student at the University of Cincinnati, originally from Malaysia. I'm drawn to problems where software and data can make a real difference — from ML research to full-stack systems.</p>
+                <p style="text-align: center;">Outside of technical work, I find creative inspiration in manga and animation — it's what first sparked my curiosity about interactive and immersive digital worlds, even if that's still more of a personal interest than a professional one.</p>
                 
                 <div class="more-about-btn" id="more-about-btn" style="text-align: center; margin: 2rem auto; padding: 1rem; max-width: 300px; border: 2px solid var(--accent-color); border-radius: 10px; cursor: pointer; transition: all 0.3s ease;">
-                    <h3 style="color: var(--accent-color);">More About Me</h3>
+                    <h3 style="color: var(--accent-color);">Currently</h3>
                     <p style="margin-top: 0.5rem; font-weight: bold;">Click for details</p>
                 </div>
                 
                 <div id="more-about-content" class="more-about-content" style="display: none;">
-                    <div class="modal-body" style="margin-top: 2rem;">
-                        <h3 style="text-align: center;">My Vision</h3>
-                        <p style="text-align: center;">My long-term vision involves developing innovative VR applications that bridge human consciousness with virtual worlds, creating spaces where users can explore alternate realities, abilities, and identities. This interest drives me to learn about both technical aspects of software engineering and diverse cultural contexts that can inform rich virtual environments.</p>
-                        
-                        <h3 style="text-align: center;">My Approach</h3>
-                        <p style="text-align: center;">While I have specific interests in gaming and VR, I'm eager to build a strong foundation in software development through diverse experiences. I enjoy tackling challenging projects that enhance my technical skills and problem-solving abilities, and I'm open to opportunities that will help me grow as a developer.</p>
+                    <div class="currently-list">
+                        <div class="currently-item">
+                            <span class="currently-label">Studying</span>
+                            <span class="currently-text">Database Design &amp; Development, Web Application Programming &amp; Security, and Software Engineering — covering the full cycle from data modeling to cloud deployment.</span>
+                        </div>
+                        <div class="currently-item">
+                            <span class="currently-label">Learning</span>
+                            <span class="currently-text">SQL, PHP, Node.js, MongoDB, Socket.io, Azure App Services, CI/CD with GitHub Actions, and secure full-stack development practices.</span>
+                        </div>
+                        <div class="currently-item">
+                            <span class="currently-label">Interested in</span>
+                            <span class="currently-text">Game development, virtual reality, and applying machine learning to interactive and immersive applications.</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -794,13 +1070,11 @@
                 <div class="education-bubble" id="uc-bubble">
                     <img src="assets/uc-logo.png" alt="University of Cincinnati Logo">
                     <h3>University of Cincinnati</h3>
-                    <p>BS in Computer Science</p>
                     <p>Click for details</p>
                 </div>
                 <div class="education-bubble" id="cstate-bubble">
                     <img src="https://www.cincinnatistate.edu/favicon.ico" alt="Cincinnati State Logo">
                     <h3>Cincinnati State</h3>
-                    <p>AAS in Software Engineering</p>
                     <p>Click for details</p>
                 </div>
             </div>
@@ -814,8 +1088,8 @@
                     <img src="assets/uc-logo.png" alt="University of Cincinnati Logo">
                     <div>
                         <h2>University of Cincinnati</h2>
-                        <p>Bachelor of Science in Computer Science</p>
-                        <p>Expected Graduation: January 2028</p>
+                        <p class="modal-degree">Bachelor of Science in Computer Science</p>
+                        <p>Expected Graduation: May 2028</p>
                         <p>GPA: 3.4</p>
                     </div>
                 </div>
@@ -826,12 +1100,24 @@
                     <h3>Relevant Coursework</h3>
                     <div class="courses-list">
                         <div class="course-item">Data Structures</div>
-                        <div class="course-item">Intro to Computing Systems</div>
-                        <div class="course-item">Discrete Computational Structures</div>
+                        <div class="course-item">Software Engineering</div>
+                        <div class="course-item">Database Design & Development</div>
                     </div>
                     
                     <h3>Achievements</h3>
                     <p>Dean's List.</p>
+
+                    <h3>Degree Progress</h3>
+                    <div class="degree-progress">
+                        <div class="progress-dates">
+                            <span>Aug 2024</span>
+                            <span>May 2028 (Expected)</span>
+                        </div>
+                        <div class="progress-bar-track">
+                            <div class="progress-bar-fill in-progress" id="uc-progress-fill"></div>
+                        </div>
+                        <div class="progress-percentage in-progress" id="uc-progress-text">Calculating...</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -844,7 +1130,7 @@
                     <img src="https://www.cincinnatistate.edu/favicon.ico" alt="Cincinnati State Logo">
                     <div>
                         <h2>Cincinnati State Technical and Community College</h2>
-                        <p>Associate of Applied Science in Software Engineering Technology</p>
+                        <p class="modal-degree">Associate of Applied Science in Software Engineering Technology</p>
                         <p>Graduated: Spring 2024</p>
                         <p>GPA: 4.0</p>
                     </div>
@@ -863,6 +1149,18 @@
                     
                     <h3>Achievements</h3>
                     <p>Graduated with highest honors (4.0 GPA)</p>
+
+                    <h3>Degree Progress</h3>
+                    <div class="degree-progress">
+                        <div class="progress-dates">
+                            <span>Aug 2022</span>
+                            <span>May 2024 (Completed)</span>
+                        </div>
+                        <div class="progress-bar-track">
+                            <div class="progress-bar-fill completed" id="cstate-progress-fill"></div>
+                        </div>
+                        <div class="progress-percentage completed" id="cstate-progress-text">100% complete</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -919,6 +1217,18 @@
                             <p>HTML</p>
                         </div>
                         <div class="skill-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968242.png" alt="CSS">
+                            <p>CSS</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript">
+                            <p>JavaScript</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968332.png" alt="PHP">
+                            <p>PHP</p>
+                        </div>
+                        <div class="skill-item">
                             <img src="assets/vb-logo.png" alt="Visual Basic">
                             <p>Visual Basic</p>
                         </div>
@@ -935,7 +1245,7 @@
                             <p>MATLAB</p>
                         </div>
                         <div class="skill-item">
-                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png" alt="Assembly">
+                            <img src="assets/assembly-logo.jpg" alt="Assembly">
                             <p>Assembly</p>
                         </div>
                     </div>
@@ -967,16 +1277,40 @@
                             <p>GitHub</p>
                         </div>
                         <div class="skill-item">
-                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968389.png" alt="Visual Studio">
-                            <p>Visual Studio</p>
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/githubactions/githubactions-original.svg" alt="GitHub Actions">
+                            <p>GitHub Actions</p>
                         </div>
                         <div class="skill-item">
                             <img src="https://cdn-icons-png.flaticon.com/512/5968/5968313.png" alt="MySQL">
                             <p>MySQL</p>
                         </div>
                         <div class="skill-item">
-                            <img src="assets/oop-logo.png" alt="OOP">
-                            <p>Object-Oriented Programming</p>
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jupyter/jupyter-original.svg" alt="Jupyter">
+                            <p>Jupyter</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="assets/pycaret-logo.png" alt="PyCaret">
+                            <p>PyCaret</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="assets/optuna-logo.png" alt="Optuna">
+                            <p>Optuna</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                            <p>Node.js</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                            <p>MongoDB</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/socketio/socketio-original.svg" alt="Socket.io">
+                            <p>Socket.io</p>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/azure/azure-original.svg" alt="Azure">
+                            <p>Azure</p>
                         </div>
                     </div>
                 </div>
@@ -1024,7 +1358,7 @@
             <div class="experience-container">
                 <div class="experience-item">
                     <div class="experience-header">
-                        <h3>Research Intern</h3>
+                        <h3>Machine Learning Research Intern</h3>
                         <div class="experience-meta">
                             <span class="company">Ming Chi University of Technology, Taiwan</span>
                             <span class="date">Jan 2026 - May 2026</span>
@@ -1079,6 +1413,34 @@
         <div class="container">
             <h2>My Projects</h2>
             <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-title">WasteWater-COD-Forecast</h3>
+                        <p class="project-description">• Architected an end-to-end ML pipeline in Python to predict Chemical Oxygen Demand (COD) in highly volatile industrial wastewater.</p>
+                        <p class="project-description">• Engineered time-series features using a 2D-state Kalman filter and ARIMA forecasting to de-noise sensor data and eliminate temporal leakage.</p>
+                        <p class="project-description">• Tuned a deep learning LSTM via Bayesian hyperparameter optimization (Optuna); demonstrated Extra Trees was 3× more computationally efficient for edge deployment.</p>
+                        <p class="project-description">• Documented findings in an IEEE-formatted research paper covering ablation studies, feature engineering progression, and cost analysis.</p>
+                        <p><strong>January 2026 – May 2026</strong></p>
+                        <div class="project-tech-icons">
+                            <div class="tech-icon-wrapper">
+                                <img class="project-tech-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python">
+                                <span class="tech-tooltip">Python</span>
+                            </div>
+                            <div class="tech-icon-wrapper">
+                                <img class="project-tech-icon" src="assets/pycaret-logo.png" alt="PyCaret">
+                                <span class="tech-tooltip">PyCaret</span>
+                            </div>
+                            <div class="tech-icon-wrapper">
+                                <img class="project-tech-icon" src="assets/optuna-logo.png" alt="Optuna">
+                                <span class="tech-tooltip">Optuna</span>
+                            </div>
+                            <div class="tech-icon-wrapper">
+                                <img class="project-tech-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jupyter/jupyter-original.svg" alt="Jupyter">
+                                <span class="tech-tooltip">Jupyter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card">
                     <div class="project-info">
                         <h3 class="project-title">Sleep-Sack Duo</h3>
@@ -1147,6 +1509,94 @@
         </div>
     </section>
     
+    <!-- Timeline Section -->
+    <section id="timeline" style="background-color: var(--section-alt-bg);">
+        <div class="container">
+            <h2>My Journey</h2>
+            <div class="timeline-wrapper">
+
+                <div class="timeline-entry">
+                    <div class="timeline-card">
+                        <div class="timeline-date">Dec 2020 – May 2021</div>
+                        <div class="timeline-title">Customer Service / Waiting Staff</div>
+                        <div class="timeline-org">Sushi Tei · Kuala Lumpur, Malaysia</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-entry timeline-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">Aug 2022 – May 2024</div>
+                        <div class="timeline-title">AAS in Software Engineering Technology</div>
+                        <div class="timeline-org">Cincinnati State · GPA 4.0 · Graduated with Honors</div>
+                    </div>
+                </div>
+
+                <div class="timeline-entry">
+                    <div class="timeline-card">
+                        <div class="timeline-date">Aug 2024 – Present</div>
+                        <div class="timeline-title">BS in Computer Science</div>
+                        <div class="timeline-org">University of Cincinnati · GPA 3.4 · Dean's List</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-entry timeline-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">May 2025 – Aug 2025</div>
+                        <div class="timeline-title">SWE Intern</div>
+                        <div class="timeline-org">Aubot · Remote</div>
+                    </div>
+                </div>
+
+                <div class="timeline-entry">
+                    <div class="timeline-card">
+                        <div class="timeline-date">Jan 2026 – May 2026</div>
+                        <div class="timeline-title">ML Research Intern</div>
+                        <div class="timeline-org">Ming Chi University of Technology · Taiwan</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-now">
+                    <span class="timeline-now-badge">★ I AM HERE</span>
+                </div>
+
+                <div class="timeline-entry timeline-right">
+                    <div class="timeline-dot dot-coop"></div>
+                    <div class="timeline-card card-coop">
+                        <div class="timeline-date">Aug 2026 – Dec 2026</div>
+                        <div class="timeline-title">Available for Co-op</div>
+                        <div class="timeline-org"><span class="season-fall">Fall 2026</span></div>
+                        <span class="coop-badge">Open to Co-op</span>
+                    </div>
+                </div>
+
+                <div class="timeline-entry">
+                    <div class="timeline-card card-coop">
+                        <div class="timeline-date">May 2027 – Aug 2027</div>
+                        <div class="timeline-title">Available for Co-op</div>
+                        <div class="timeline-org"><span class="season-summer">Summer 2027</span></div>
+                        <span class="coop-badge">Open to Co-op</span>
+                    </div>
+                    <div class="timeline-dot dot-coop"></div>
+                </div>
+
+                <div class="timeline-entry timeline-right">
+                    <div class="timeline-dot dot-future"></div>
+                    <div class="timeline-card card-future">
+                        <div class="timeline-date">May 2028 (Expected)</div>
+                        <div class="timeline-title">BS in Computer Science — Graduation</div>
+                        <div class="timeline-org">University of Cincinnati</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -1248,14 +1698,33 @@
         const ucModalClose = document.getElementById('uc-modal-close');
         const cstateModalClose = document.getElementById('cstate-modal-close');
         
+        function animateProgress(fillId, textId, startDate, endDate) {
+            const fill = document.getElementById(fillId);
+            const text = document.getElementById(textId);
+            const now = new Date();
+            const start = new Date(startDate);
+            const end = new Date(endDate);
+            let pct;
+            if (now >= end) pct = 100;
+            else if (now <= start) pct = 0;
+            else pct = Math.round(((now - start) / (end - start)) * 100);
+            fill.style.width = '0%';
+            setTimeout(() => {
+                fill.style.width = pct + '%';
+                text.textContent = pct + '% complete';
+            }, 120);
+        }
+
         ucBubble.addEventListener('click', () => {
             ucModal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            animateProgress('uc-progress-fill', 'uc-progress-text', '2024-08-26', '2028-08-21');
         });
         
         cstateBubble.addEventListener('click', () => {
             cstateModal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            animateProgress('cstate-progress-fill', 'cstate-progress-text', '2022-08-22', '2024-05-10');
         });
         
         ucModalClose.addEventListener('click', () => {
@@ -1352,11 +1821,11 @@
         moreAboutBtn.addEventListener('click', () => {
             if (moreAboutContent.style.display === 'none') {
                 moreAboutContent.style.display = 'block';
-                moreAboutBtn.querySelector('h3').textContent = 'Less About Me';
+                moreAboutBtn.querySelector('h3').textContent = 'Currently';
                 moreAboutBtn.querySelector('p').textContent = 'Click to collapse';
             } else {
                 moreAboutContent.style.display = 'none';
-                moreAboutBtn.querySelector('h3').textContent = 'More About Me';
+                moreAboutBtn.querySelector('h3').textContent = 'Currently';
                 moreAboutBtn.querySelector('p').textContent = 'Click for details';
             }
         });
