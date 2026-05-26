@@ -59,7 +59,7 @@ OJS_Portfolio/
 ├── index.html               # Entire portfolio
 ├── README.md
 └── assets/                  # personal photo & logos
-    ├── JaiSheng-Photo.jpg   
+    ├── jai_headshot.png
     ├── uc-logo.png          
     ├── ...    
     └── Ong_JaiSheng_Resume2026.pdf # My Latest Resume
