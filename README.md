@@ -1,4 +1,4 @@
-# Ong Jai Sheng — Personal Portfolio
+# Ong Jai Sheng — Portfolio
 
 A personal portfolio website showcasing my education, work experience, projects, and technical skills as a Computer Science student at the University of Cincinnati.
 
