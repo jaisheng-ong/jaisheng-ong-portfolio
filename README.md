@@ -12,7 +12,7 @@ A personal portfolio website showcasing my education, work experience, projects,
 
 - LinkedIn: [linkedin.com/in/jaisheng-ong](https://linkedin.com/in/jaisheng-ong)
 - GitHub: [github.com/jaisheng-ong](https://github.com/jaisheng-ong)
-- Email: ongjs@mail.uc.edu
+- Email: [ongjs@mail.uc.edu](mailto:ongjs@mail.uc.edu)
 
 ---
 
