@@ -6,7 +6,7 @@ A personal portfolio website showcasing my education, work experience, projects,
 
 ## Author
 
-**Ong Jai Sheng**
+**Name**: Ong Jai Sheng
 
 ![Jai's headshot](assets/jai_headshot.png)
 
