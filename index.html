@@ -1444,10 +1444,10 @@
                 <div class="project-card">
                     <div class="project-info">
                         <h3 class="project-title">WasteWater-COD-Forecast</h3>
-                        <p class="project-description">• Architected an end-to-end ML pipeline in Python to predict Chemical Oxygen Demand (COD) in highly volatile industrial wastewater.</p>
-                        <p class="project-description">• Engineered time-series features using a 2D-state Kalman filter and ARIMA forecasting to de-noise sensor data and eliminate temporal leakage.</p>
-                        <p class="project-description">• Tuned a deep learning LSTM via Bayesian hyperparameter optimization (Optuna); demonstrated Extra Trees was 3× more computationally efficient for edge deployment.</p>
-                        <p class="project-description">• Documented findings in an IEEE-formatted research paper covering ablation studies, feature engineering progression, and cost analysis.</p>
+                        <p class="project-description">• Preprocessed a small-scale industrial sensor dataset from MCUT's wastewater facility by studying plant process context, mapping raw feature semantics to physical treatment stages, and resolving missing values.</p>
+                        <p class="project-description">• Applied VIF-based feature selection to remove multicollinear predictors; found residual features had weak COD signal, motivating time-series feature engineering via <strong>Kalman filtering</strong> and <strong>ARIMA</strong> forecasting to surface temporal patterns.</p>
+                        <p class="project-description">• Tarined <strong>Extra Tree</strong> regressor on the engineered features and analyzed importance scores to interpret which derived signals most strongly drove AT_COD predictions.</p>
+                        <p class="project-description">• Implemented <strong>LSTM</strong> as a sequence-learning baseline; attributed its underperformance to insufficient training samples for deep learning, empirically validating Extra Trees as the appropriate model for small-scale edge deployment.</p>
                         <p><strong>January 2026 – May 2026</strong></p>
                         <div class="project-tech-icons">
                             <div class="tech-icon-wrapper">
