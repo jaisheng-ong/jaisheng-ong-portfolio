@@ -2,7 +2,7 @@
 
 A personal portfolio website showcasing my education, work experience, projects, and technical skills as a Computer Science student at the University of Cincinnati.
 
-**Live Site:** <a href="https://jaisheng-ong.github.io/jaisheng-ong-portfolio/" target="_blank" rel="noopener noreferrer">Visit Portfolio</a>
+**Live Site:** [Visit Portfolio](https://jaisheng-ong.github.io/jaisheng-ong-portfolio/){:target="_blank"}
 
 <!--[jaisheng-ong.github.io/jaisheng-ong-portfolio](https://jaisheng-ong.github.io/jaisheng-ong-portfolio/)-->
 
