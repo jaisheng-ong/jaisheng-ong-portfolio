@@ -40,18 +40,6 @@ A personal portfolio website showcasing my education, work experience, projects,
 
 ---
 
-## Running Locally
-
-No build step required. Clone the repo and open `index.html` directly in any browser:
-
-```bash
-git clone https://github.com/jaisheng-ong/jaisheng-ong-portfolio.git
-cd jaisheng-ong-portfolio
-open index.html
-```
-
----
-
 ## Project Structure
 
 ```
