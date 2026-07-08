@@ -17,6 +17,9 @@
             --accent-color: #3498db;
             --accent-hover: #2980b9;
             --shadow-color: rgba(0, 0, 0, 0.1);
+            --timeline-uc-color: #7b1fa2;
+            --timeline-aas-color: #e67e22;
+            --timeline-experience-color: #27ae60;
         }
 
         /* Dark Theme Variables */
@@ -31,6 +34,9 @@
             --accent-color: #4dabf7;
             --accent-hover: #3793dd;
             --shadow-color: rgba(0, 0, 0, 0.3);
+            --timeline-uc-color: #ba68c8;
+            --timeline-aas-color: #ffb74d;
+            --timeline-experience-color: #2ecc71;
         }
         
         /* Basic Reset */
@@ -404,6 +410,30 @@
         .experience-content li {
             margin-bottom: 0.75rem;
             line-height: 1.6;
+        }
+
+        .experience-item.experience-upcoming {
+            border: 1.5px dashed var(--accent-color);
+            box-shadow: none;
+        }
+
+        .experience-upcoming-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            background-color: rgba(52, 152, 219, 0.12);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-upcoming .experience-content {
+            color: var(--text-color);
+            opacity: 0.85;
+            font-style: italic;
         }
         
         /* Projects Section */
@@ -800,6 +830,51 @@
         }
 
         /* Timeline Section */
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-header h2 {
+            margin-bottom: 0;
+        }
+
+        .timeline-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.25rem;
+            padding: 0.65rem 1rem;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 6px var(--shadow-color);
+            margin-left: auto;
+        }
+
+        .timeline-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-color);
+            white-space: nowrap;
+        }
+
+        .timeline-legend-swatch {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        .swatch-experience {
+            background-color: var(--timeline-experience-color);
+        }
+
         .timeline-wrapper {
             position: relative;
             max-width: 900px;
@@ -851,6 +926,50 @@
             background-color: var(--bg-color);
         }
 
+        .timeline-card.card-uc {
+            border-left: 4px solid var(--timeline-uc-color);
+        }
+
+        .timeline-card.card-uc .timeline-date {
+            color: var(--timeline-uc-color);
+        }
+
+        .timeline-dot.dot-uc {
+            background-color: var(--timeline-uc-color);
+            box-shadow: 0 0 0 2px var(--timeline-uc-color);
+        }
+
+        .timeline-card.card-aas {
+            border-left: 4px solid var(--timeline-aas-color);
+        }
+
+        .timeline-card.card-aas .timeline-date {
+            color: var(--timeline-aas-color);
+        }
+
+        .timeline-dot.dot-aas {
+            background-color: var(--timeline-aas-color);
+            box-shadow: 0 0 0 2px var(--timeline-aas-color);
+        }
+
+        .timeline-card.card-experience {
+            border-left: 4px solid var(--timeline-experience-color);
+        }
+
+        .timeline-card.card-experience .timeline-date {
+            color: var(--timeline-experience-color);
+        }
+
+        .timeline-dot.dot-experience {
+            background-color: var(--timeline-experience-color);
+            box-shadow: 0 0 0 2px var(--timeline-experience-color);
+        }
+
+        .timeline-card.card-experience.card-upcoming {
+            border-left-style: dashed;
+            opacity: 0.9;
+        }
+
         .timeline-card {
             background-color: var(--card-bg);
             border-radius: 8px;
@@ -867,23 +986,37 @@
             background-color: transparent;
         }
 
+        .timeline-card.card-uc.card-future {
+            border: 1px dashed var(--timeline-uc-color);
+            border-left: 4px solid var(--timeline-uc-color);
+        }
+
+        .timeline-card.card-uc.card-future .timeline-date {
+            color: var(--timeline-uc-color);
+        }
+
+        .timeline-dot.dot-uc.dot-future {
+            background-color: var(--bg-color);
+            box-shadow: 0 0 0 2px var(--timeline-uc-color);
+        }
+
         .timeline-card.card-coop {
-            border: 1.5px solid #27ae60;
+            border: 1.5px solid var(--timeline-experience-color);
             background-color: var(--card-bg);
         }
 
         .timeline-card.card-coop .timeline-date {
-            color: #27ae60;
+            color: var(--timeline-experience-color);
         }
 
         .timeline-dot.dot-coop {
-            background-color: #27ae60;
-            box-shadow: 0 0 0 2px #27ae60;
+            background-color: var(--timeline-experience-color);
+            box-shadow: 0 0 0 2px var(--timeline-experience-color);
         }
 
         .coop-badge {
             display: inline-block;
-            background-color: #27ae60;
+            background-color: var(--timeline-experience-color);
             color: white;
             font-size: 0.7rem;
             font-weight: 700;
@@ -947,6 +1080,14 @@
         }
 
         @media (max-width: 768px) {
+            .timeline-header {
+                flex-direction: column;
+            }
+
+            .timeline-legend {
+                width: 100%;
+            }
+
             .timeline-wrapper::before {
                 left: 20px;
                 transform: none;
@@ -1376,6 +1517,24 @@
         <div class="container">
             <h2>Work Experiences</h2>
             <div class="experience-container">
+                <!-- Upcoming experience — replace placeholders below -->
+                <div class="experience-item experience-upcoming">
+                    <div class="experience-header">
+                        <img src="assets/siemens-logo.jpg" alt="Siemens Digital Industries Software" class="experience-logo">
+                        <div class="experience-header-text">
+                            <span class="experience-upcoming-badge">Incoming</span>
+                            <h3>Software Development Intern</h3>
+                            <div class="experience-meta">
+                                <span class="company">Siemens Digital Industries Software, Cincinnati</span>
+                                <span class="date">August 2026 – December 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-content">
+                        <p>Details to be updated.</p>
+                    </div>
+                </div>
+
                 <div class="experience-item">
                     <div class="experience-header">
                         <img src="assets/mcut-logo.jpg" alt="Ming Chi University of Technology" class="experience-logo">
@@ -1444,10 +1603,10 @@
                 <div class="project-card">
                     <div class="project-info">
                         <h3 class="project-title">WasteWater-COD-Forecast</h3>
-                        <p class="project-description">• Architected an end-to-end ML pipeline in Python to predict Chemical Oxygen Demand (COD) in highly volatile industrial wastewater.</p>
-                        <p class="project-description">• Engineered time-series features using a 2D-state Kalman filter and ARIMA forecasting to de-noise sensor data and eliminate temporal leakage.</p>
-                        <p class="project-description">• Tuned a deep learning LSTM via Bayesian hyperparameter optimization (Optuna); demonstrated Extra Trees was 3× more computationally efficient for edge deployment.</p>
-                        <p class="project-description">• Documented findings in an IEEE-formatted research paper covering ablation studies, feature engineering progression, and cost analysis.</p>
+                        <p class="project-description">• Preprocessed a small-scale industrial sensor dataset from MCUT's wastewater facility by studying plant process context, mapping raw feature semantics to physical treatment stages, and resolving missing values.</p>
+                        <p class="project-description">• Applied VIF-based feature selection to remove multicollinear predictors; found residual features had weak COD signal, motivating time-series feature engineering via <strong>Kalman filtering</strong> and <strong>ARIMA</strong> forecasting to surface temporal patterns.</p>
+                        <p class="project-description">• Tarined <strong>Extra Tree</strong> regressor on the engineered features and analyzed importance scores to interpret which derived signals most strongly drove AT_COD predictions.</p>
+                        <p class="project-description">• Implemented <strong>LSTM</strong> as a sequence-learning baseline; attributed its underperformance to insufficient training samples for deep learning, empirically validating Extra Trees as the appropriate model for small-scale edge deployment.</p>
                         <p><strong>January 2026 – May 2026</strong></p>
                         <div class="project-tech-icons">
                             <div class="tech-icon-wrapper">
@@ -1490,7 +1649,7 @@
                 <div class="project-card">
                     <div class="project-info">
                         <h3 class="project-title">Ski and Snowboard Rental System</h3>
-                        <p class="project-description">• Developed a Ski and Snowboard Rental System using Python and Object-Oriented Programming.</p>
+                        <p class="project-description">• Developed a Ski and Snowboard Rental System using <strong>Python</strong> and <strong>Object-Oriented Programming</strong>.</p>
                         <p class="project-description">• Implemented features for customers to view available equipment, rent skis and snowboards on an hourly, daily, or weekly basis, and apply discounts for family rentals and coupon codes.</p>
                         <p><strong>May 2023 – August 2023</strong></p>
                         <div class="project-tech-icons">
@@ -1508,7 +1667,7 @@
                 <div class="project-card">
                     <div class="project-info">
                         <h3 class="project-title">Employee Discount Calculation System</h3>
-                        <p class="project-description">• Utilized Python program to calculate employee discount based on years of service, employee status and annual discount limits.</p>
+                        <p class="project-description">• Utilized <strong>Python</strong> program to calculate employee discount based on years of service, employee status and annual discount limits.</p>
                         <p class="project-description">• Designed application to handle multiple employees in a single session, display individual and summary reports.</p>
                         <p><strong>Jan 2023 - May 2023</strong></p>
                         <div class="project-tech-icons">
@@ -1522,7 +1681,7 @@
                 <div class="project-card">
                     <div class="project-info">
                         <h3 class="project-title">Passenger and Employee Management System</h3>
-                        <p class="project-description">• Developed a comprehensive login system using Visual Basic and SQL for both passengers and employees.</p>
+                        <p class="project-description">• Developed a comprehensive login system using <strong>Visual Basic</strong> and <strong>SQL</strong> for both passengers and employees.</p>
                         <p class="project-description">• Implemented secure login functionality with validation for Passenger and Employee roles.</p>
                         <p><strong>August 2022 - Dec 2022</strong></p>
                         <div class="project-tech-icons">
@@ -1544,7 +1703,15 @@
     <!-- Timeline Section -->
     <section id="timeline" style="background-color: var(--section-alt-bg);">
         <div class="container">
-            <h2>My Journey</h2>
+            <div class="timeline-header">
+                <h2>My Journey</h2>
+                <div class="timeline-legend">
+                    <div class="timeline-legend-item">
+                        <span class="timeline-legend-swatch swatch-experience"></span>
+                        <span>Co-op &amp; Internship</span>
+                    </div>
+                </div>
+            </div>
             <div class="timeline-wrapper">
 
                 <div class="timeline-entry">
@@ -1557,8 +1724,8 @@
                 </div>
 
                 <div class="timeline-entry timeline-right">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
+                    <div class="timeline-dot dot-aas"></div>
+                    <div class="timeline-card card-aas">
                         <div class="timeline-date">Aug 2022 – May 2024</div>
                         <div class="timeline-title">AAS in Software Engineering Technology</div>
                         <div class="timeline-org">Cincinnati State · GPA 4.0 · Graduated with Honors</div>
@@ -1566,17 +1733,17 @@
                 </div>
 
                 <div class="timeline-entry">
-                    <div class="timeline-card">
+                    <div class="timeline-card card-uc">
                         <div class="timeline-date">Aug 2024 – Present</div>
                         <div class="timeline-title">BS in Computer Science</div>
                         <div class="timeline-org">University of Cincinnati · GPA 3.4 · Dean's List</div>
                     </div>
-                    <div class="timeline-dot"></div>
+                    <div class="timeline-dot dot-uc"></div>
                 </div>
 
                 <div class="timeline-entry timeline-right">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
+                    <div class="timeline-dot dot-experience"></div>
+                    <div class="timeline-card card-experience">
                         <div class="timeline-date">May 2025 – Aug 2025</div>
                         <div class="timeline-title">SWE Intern</div>
                         <div class="timeline-org">Aubot · Remote</div>
@@ -1584,12 +1751,12 @@
                 </div>
 
                 <div class="timeline-entry">
-                    <div class="timeline-card">
+                    <div class="timeline-card card-experience">
                         <div class="timeline-date">Jan 2026 – May 2026</div>
                         <div class="timeline-title">ML Research Intern</div>
                         <div class="timeline-org">Ming Chi University of Technology · Taiwan</div>
                     </div>
-                    <div class="timeline-dot"></div>
+                    <div class="timeline-dot dot-experience"></div>
                 </div>
 
                 <div class="timeline-now">
@@ -1597,13 +1764,12 @@
                 </div>
 
                 <div class="timeline-entry timeline-right">
-                    <div class="timeline-dot dot-coop"></div>
-                    <div class="timeline-card card-coop">
+                    <div class="timeline-card card-experience">
                         <div class="timeline-date">Aug 2026 – Dec 2026</div>
-                        <div class="timeline-title">Available for Co-op</div>
-                        <div class="timeline-org"><span class="season-fall">Fall 2026</span></div>
-                        <span class="coop-badge">Open to Co-op</span>
+                        <div class="timeline-title">Incoming SDE Intern</div>
+                        <div class="timeline-org">Siemens Digital industries Software</div>
                     </div>
+                    <div class="timeline-dot dot-experience"></div>
                 </div>
 
                 <div class="timeline-entry">
@@ -1617,8 +1783,8 @@
                 </div>
 
                 <div class="timeline-entry timeline-right">
-                    <div class="timeline-dot dot-future"></div>
-                    <div class="timeline-card card-future">
+                    <div class="timeline-dot dot-uc dot-future"></div>
+                    <div class="timeline-card card-uc card-future">
                         <div class="timeline-date">May 2028 (Expected)</div>
                         <div class="timeline-title">BS in Computer Science — Graduation</div>
                         <div class="timeline-org">University of Cincinnati</div>
@@ -1874,7 +2040,6 @@
     </script>
 </body>
 </html>
-
 
 
 
