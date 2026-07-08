@@ -843,16 +843,12 @@
 
         /* Timeline Section */
         .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 1rem 2rem;
+            position: relative;
             margin-bottom: 0.5rem;
         }
 
         .timeline-header h2 {
-            margin-bottom: 0;
+            width: 100%;
         }
 
         .timeline-legend {
@@ -863,7 +859,9 @@
             background-color: var(--card-bg);
             border-radius: 8px;
             box-shadow: 0 2px 6px var(--shadow-color);
-            margin-left: auto;
+            position: absolute;
+            top: 0;
+            right: 0;
         }
 
         .timeline-legend-item {
@@ -1092,12 +1090,10 @@
         }
 
         @media (max-width: 768px) {
-            .timeline-header {
-                flex-direction: column;
-            }
-
             .timeline-legend {
-                width: 100%;
+                position: static;
+                width: fit-content;
+                margin: 0 auto 1rem;
             }
 
             .timeline-wrapper::before {
@@ -1616,7 +1612,7 @@
                     <div class="project-info">
                         <h3 class="project-title">WasteWater-COD-Forecast</h3>
                         <p class="project-description">• Preprocessed a small-scale industrial sensor dataset from MCUT's wastewater facility by studying plant process context, mapping raw feature semantics to physical treatment stages, and resolving missing values.</p>
-                        <p class="project-description">• Applied VIF-based feature selection to remove multicollinear predictors; found residual features had weak COD signal, motivating time-series feature engineering via <strong>Kalman filtering</strong> and <strong>ARIMA</strong> forecasting to surface temporal patterns.</p>
+                        <p class="project-description">• Applied VIF-based feature selection to remove multicollinear predictors; found residual features had weak COD signal, motivating <strong>time-series</strong> feature engineering via <strong>Kalman filtering</strong> and <strong>ARIMA</strong> forecasting to surface temporal patterns.</p>
                         <p class="project-description">• Tarined <strong>Extra Tree</strong> regressor on the engineered features and analyzed importance scores to interpret which derived signals most strongly drove AT_COD predictions.</p>
                         <p class="project-description">• Implemented <strong>LSTM</strong> as a sequence-learning baseline; attributed its underperformance to insufficient training samples for deep learning, empirically validating Extra Trees as the appropriate model for small-scale edge deployment.</p>
                         <p><strong>January 2026 – May 2026</strong></p>
