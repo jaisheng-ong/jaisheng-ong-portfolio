@@ -2,11 +2,11 @@
 
 A personal portfolio website showcasing my education, work experience, projects, and technical skills as a Computer Science student at the University of Cincinnati.
 
-**Live Site:** [jaisheng-ong.github.io/jaisheng-ong-portfolio](https://jaisheng-ong.github.io/jaisheng-ong-portfolio/)
+**Live Site URL:** [jaisheng-ong.github.io/jaisheng-ong-portfolio](https://jaisheng-ong.github.io/jaisheng-ong-portfolio/)
 
 ## Author
 
-**Ong Jai Sheng**
+**Name**: Ong Jai Sheng
 
 ![Jai's headshot](assets/jai_headshot.png)
 
@@ -37,18 +37,6 @@ A personal portfolio website showcasing my education, work experience, projects,
 | Interactivity | Vanilla JavaScript (modals, progress bar animation, smooth scroll, toggle) |
 | Icons | Flaticon CDN, devicons (GitHub), git-scm.com |
 | Hosting | GitHub Pages |
-
----
-
-## Running Locally
-
-No build step required. Clone the repo and open `index.html` directly in any browser:
-
-```bash
-git clone https://github.com/jaisheng-ong/jaisheng-ong-portfolio.git
-cd jaisheng-ong-portfolio
-open index.html
-```
 
 ---
 
