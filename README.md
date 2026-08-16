@@ -10,9 +10,10 @@ A personal portfolio website showcasing my education, work experience, projects,
 
 ![Jai's headshot](assets/jai_headshot.png)
 
-- LinkedIn: [linkedin.com/in/jaisheng-ong](https://linkedin.com/in/jaisheng-ong)
+- LinkedIn: [linkedin.com/jaisheng-ong](https://linkedin.com/in/jaisheng-ong)
 - GitHub: [github.com/jaisheng-ong](https://github.com/jaisheng-ong)
 - Email: [ongjs@mail.uc.edu](mailto:ongjs@mail.uc.edu)
+- Resume: [jaisheng-ong-resume](https://github.com/jaisheng-ong/jaisheng-ong-resume/blob/main/Ong_JaiSheng_Resume2027.pdf)
 
 ---
 
@@ -50,7 +51,6 @@ OJS_Portfolio/
     ├── jai_headshot.png
     ├── uc-logo.png          
     ├── ...    
-    └── Ong_JaiSheng_Resume2026.pdf # My Latest Resume
 ```
 
 ---
