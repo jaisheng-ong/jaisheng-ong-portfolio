@@ -588,6 +588,23 @@
             font-weight: 500;
             margin: 0;
         }
+
+        /* Email toggle button — styled to look like surrounding text, not a button */
+        .email-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .email-toggle:hover {
+            opacity: 0.8;
+        }
         
         /* Footer */
         footer {

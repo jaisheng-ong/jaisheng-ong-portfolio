@@ -210,6 +210,28 @@ window.addEventListener('click', (e) => {
 });
 
 
+// ─── Contact: show / hide email ───────────────────────────────────────────────
+(function () {
+    var btn     = document.getElementById('email-toggle');
+    var visible = false;
+
+    if (!btn) return;
+
+    btn.addEventListener('click', function () {
+        if (visible) {
+            btn.textContent = 'Show Email';
+            visible = false;
+        } else {
+            var user   = 'ongjs';
+            var domain = 'mail.uc.edu';
+            btn.innerHTML = '<a href="mailto:' + user + '@' + domain + '" style="color:white">'
+                          + user + '@' + domain + '</a>';
+            visible = true;
+        }
+    });
+})();
+
+
 // ─── Footer: auto-updating copyright year ─────────────────────────────────────
 const footerCopyright = document.getElementById('footer-copyright');
 if (footerCopyright) {
