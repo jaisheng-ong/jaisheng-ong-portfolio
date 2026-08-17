@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "A personal portfolio website showcasing my education, work experience, projects, and technical skills as a Computer Science student at the University of Cincinnati.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaisheng-ong/jaisheng-ong-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jaisheng-ong/jaisheng-ong-portfolio/issues"
+  },
+  "homepage": "https://github.com/jaisheng-ong/jaisheng-ong-portfolio#readme",
+  "dependencies": {
+    "devicons": "^2.0.1"
+  }
+}

@@ -3,7 +3,7 @@
 A personal portfolio website showcasing my education, work experience, projects, and technical skills as a Computer Science student at the University of Cincinnati.
 
 **Live Site URL:** [jaisheng-ong.github.io/jaisheng-ong-portfolio](https://jaisheng-ong.github.io/jaisheng-ong-portfolio/)
-
+> Images: https://techicons.dev/
 ## Author
 
 **Name**: Ong Jai Sheng
