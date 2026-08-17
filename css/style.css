@@ -10,8 +10,6 @@
             --accent-color: #3498db;
             --accent-hover: #2980b9;
             --shadow-color: rgba(0, 0, 0, 0.1);
-            --timeline-uc-color: #7b1fa2;
-            --timeline-aas-color: #e67e22;
             --timeline-experience-color: #27ae60;
         }
 
@@ -27,8 +25,6 @@
             --accent-color: #4dabf7;
             --accent-hover: #3793dd;
             --shadow-color: rgba(0, 0, 0, 0.3);
-            --timeline-uc-color: #ba68c8;
-            --timeline-aas-color: #ffb74d;
             --timeline-experience-color: #2ecc71;
         }
         
@@ -541,7 +537,50 @@
             visibility: visible;
             opacity: 1;
         }
-        
+
+        /* Certifications Section */
+        .education-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .education-item {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 4px 6px var(--shadow-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px var(--shadow-color);
+        }
+
+        .education-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.4rem;
+            line-height: 1.4;
+        }
+
+        .edu-degree {
+            font-size: 0.875rem;
+            color: var(--accent-color);
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+
+        .edu-dates {
+            font-size: 0.8rem;
+            color: var(--text-color);
+            opacity: 0.65;
+        }
+
         /* Contact Section */
         .contact-bar {
             display: flex;
@@ -941,6 +980,10 @@
             flex-shrink: 0;
         }
 
+        .swatch-education {
+            background-color: var(--accent-color);
+        }
+
         .swatch-experience {
             background-color: var(--timeline-experience-color);
         }
@@ -997,29 +1040,29 @@
         }
 
         .timeline-card.card-uc {
-            border-left: 4px solid var(--timeline-uc-color);
+            border-left: 4px solid var(--accent-color);
         }
 
         .timeline-card.card-uc .timeline-date {
-            color: var(--timeline-uc-color);
+            color: var(--accent-color);
         }
 
         .timeline-dot.dot-uc {
-            background-color: var(--timeline-uc-color);
-            box-shadow: 0 0 0 2px var(--timeline-uc-color);
+            background-color: var(--accent-color);
+            box-shadow: 0 0 0 2px var(--accent-color);
         }
 
         .timeline-card.card-aas {
-            border-left: 4px solid var(--timeline-aas-color);
+            border-left: 4px solid var(--accent-color);
         }
 
         .timeline-card.card-aas .timeline-date {
-            color: var(--timeline-aas-color);
+            color: var(--accent-color);
         }
 
         .timeline-dot.dot-aas {
-            background-color: var(--timeline-aas-color);
-            box-shadow: 0 0 0 2px var(--timeline-aas-color);
+            background-color: var(--accent-color);
+            box-shadow: 0 0 0 2px var(--accent-color);
         }
 
         .timeline-card.card-experience {
@@ -1057,17 +1100,17 @@
         }
 
         .timeline-card.card-uc.card-future {
-            border: 1px dashed var(--timeline-uc-color);
-            border-left: 4px solid var(--timeline-uc-color);
+            border: 1px dashed var(--accent-color);
+            border-left: 4px solid var(--accent-color);
         }
 
         .timeline-card.card-uc.card-future .timeline-date {
-            color: var(--timeline-uc-color);
+            color: var(--accent-color);
         }
 
         .timeline-dot.dot-uc.dot-future {
             background-color: var(--bg-color);
-            box-shadow: 0 0 0 2px var(--timeline-uc-color);
+            box-shadow: 0 0 0 2px var(--accent-color);
         }
 
         .timeline-card.card-coop {
@@ -1099,12 +1142,12 @@
 
         .season-fall {
             font-weight: 700;
-            color: #d35400;
+            color: var(--text-color);
         }
 
         .season-summer {
             font-weight: 700;
-            color: #d4a017;
+            color: var(--text-color);
         }
 
         .timeline-date {
